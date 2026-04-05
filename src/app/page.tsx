@@ -18,7 +18,7 @@ export default function LandingPage() {
           <Link href="#roles" className="hover:text-primary transition">Roles</Link>
         </nav>
         <div className="flex items-center gap-4">
-          <Link href="/onboarding">
+          <Link href="/login">
             <Button variant="ghost">Log in</Button>
           </Link>
           <Link href="/onboarding">

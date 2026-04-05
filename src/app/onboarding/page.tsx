@@ -37,8 +37,12 @@ export default function OnboardingPage() {
             </Button>
           </Link>
         </CardContent>
-        <CardFooter className="justify-center">
-          <div className="text-sm text-muted-foreground">Admin provisioning is handled separately.</div>
+        <CardFooter className="flex-col gap-4 text-center justify-center">
+          <div className="text-sm text-muted-foreground flex gap-1">
+            Already have an account?
+            <Link href="/login" className="text-primary hover:underline font-medium">Log in</Link>
+          </div>
+          <div className="text-xs text-muted-foreground">Admin provisioning is handled separately.</div>
         </CardFooter>
       </Card>
     </div>
