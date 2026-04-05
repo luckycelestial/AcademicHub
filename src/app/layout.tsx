@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AcademicHub - College Academic Management",
+  title: "Academia - College Academic Management",
   description: "Centralized notes sharing, task tracking, and class communication.",
 };
 

@@ -17,7 +17,7 @@ export default function Sidebar() {
     <aside className="w-64 border-r bg-card flex-col h-screen hidden md:flex sticky top-0">
       <div className="h-14 flex items-center px-6 border-b font-bold tracking-tight gap-2">
         <GraduationCap className="h-5 w-5 text-primary" />
-        <span>AcademicHub</span>
+        <span>Academia</span>
       </div>
       <nav className="flex-1 p-4 space-y-1">
         {navItems.map((item) => (

@@ -23,7 +23,7 @@ export default function Header() {
         </Button>
         <div className="flex items-center gap-2 font-bold tracking-tight">
           <GraduationCap className="h-5 w-5 text-primary" />
-          <span className="hidden sm:inline">AcademicHub</span>
+          <span className="hidden sm:inline">Academia</span>
         </div>
       </div>
       

@@ -10,7 +10,7 @@ export default function LandingPage() {
       <header className="px-6 py-4 flex items-center justify-between border-b">
         <div className="flex items-center gap-2">
           <GraduationCap className="h-6 w-6 text-primary" />
-          <span className="font-bold text-xl tracking-tight">AcademicHub</span>
+          <span className="font-bold text-xl tracking-tight">Academia</span>
         </div>
         <nav className="gap-6 hidden md:flex text-sm font-medium text-muted-foreground">
           <Link href="#features" className="hover:text-primary transition">Features</Link>
@@ -55,7 +55,7 @@ export default function LandingPage() {
         <section id="features" className="w-full py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Everything you need in one place</h2>
-            <p className="text-lg text-muted-foreground max-w-[600px] mx-auto">No more fragmented tools or missed deadlines. AcademicHub brings your entire university cohort together.</p>
+            <p className="text-lg text-muted-foreground max-w-[600px] mx-auto">No more fragmented tools or missed deadlines. Academia brings your entire university cohort together.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="border-border/50 shadow-sm">
@@ -93,7 +93,7 @@ export default function LandingPage() {
 
       {/* Footer */}
       <footer className="border-t py-8 text-center text-muted-foreground">
-        <p>&copy; {new Date().getFullYear()} AcademicHub. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Academia. All rights reserved.</p>
       </footer>
     </div>
   );

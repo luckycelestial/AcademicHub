@@ -8,7 +8,7 @@ export default function OnboardingPage() {
     <div className="flex flex-col min-h-screen items-center justify-center p-4 bg-muted/30">
       <div className="mb-8 flex items-center gap-2">
         <GraduationCap className="h-8 w-8 text-primary" />
-        <span className="font-bold text-3xl tracking-tight">AcademicHub</span>
+        <span className="font-bold text-3xl tracking-tight">Academia</span>
       </div>
       
       <Card className="w-full max-w-md">
