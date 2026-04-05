@@ -1,5 +1,4 @@
 ﻿import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { BookOpen, CheckSquare, GraduationCap, Users, LayoutDashboard } from "lucide-react";
 import { cn } from "@/lib/utils";
 
