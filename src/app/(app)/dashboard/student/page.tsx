@@ -1,7 +1,6 @@
 ﻿import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { BookOpen, CheckSquare, GraduationCap, Clock } from "lucide-react";
 import { mockTasks, mockClasses, mockNotes } from "@/lib/mock-data";
-import { Badge } from "@/components/ui/badge";
 
 export default function StudentDashboard() {
   const pendingTasks = mockTasks.filter(t => t.status === "pending");

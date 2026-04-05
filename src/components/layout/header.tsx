@@ -56,8 +56,8 @@ export default function Header() {
             <DropdownMenuItem>Profile</DropdownMenuItem>
             <DropdownMenuItem>Settings</DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem asChild className="text-destructive">
-              <a href="/login">Log out</a>
+            <DropdownMenuItem className="text-destructive">
+              <a href="/login" className="w-full">Log out</a>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

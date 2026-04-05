@@ -6,7 +6,7 @@ import { GraduationCap } from "lucide-react";
 import { redirect } from "next/navigation";
 
 export default function LoginPage() {
-  async function loginAction(formData: FormData) {
+  async function loginAction() {
     "use server";
     // Log in action (For now just redirect to dashboard)
     // Here you would add normal username/password validation logic
@@ -45,7 +45,7 @@ export default function LoginPage() {
           </CardContent>
         </form>
         <CardFooter className="flex justify-center text-sm text-muted-foreground gap-1">
-          Don't have an account? 
+          Don&apos;t have an account? 
           <Link href="/onboarding" className="text-primary hover:underline font-medium">Sign up</Link>
         </CardFooter>
       </Card>
