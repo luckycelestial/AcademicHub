@@ -2,6 +2,8 @@ import { mockNotes, mockClasses } from '@/lib/mock-data';
 import { Card, CardContent } from '@/components/ui/card';
 import { FileText, Download, FileUp, Hash, Calendar, UploadCloud } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
 
 export default function NotesPage() {
   return (
@@ -11,10 +13,38 @@ export default function NotesPage() {
           <h1 className="text-3xl font-bold tracking-tight">Notes & Resources</h1>
           <p className="text-muted-foreground mt-2">Access your course materials and uploads.</p>
         </div>
-        <Button className="gap-2">
-          <UploadCloud className="h-4 w-4" />
-          Upload Note
-        </Button>
+
+        <Dialog>
+          <DialogTrigger className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2">
+              <UploadCloud className="h-4 w-4" />
+              Upload Note
+          </DialogTrigger>
+          <DialogContent className="sm:max-w-[425px]">
+            <DialogHeader>
+              <DialogTitle>Upload Note</DialogTitle>
+              <DialogDescription>
+                Share a document or resource with your class. Future database connection will route this payload.
+              </DialogDescription>
+            </DialogHeader>
+            <div className="grid gap-4 py-4">
+              <div className="grid gap-2">
+                <label htmlFor="file" className="text-sm font-medium">Select File</label>
+                <Input id="file" type="file" />
+              </div>
+              <div className="grid gap-2">
+                <label htmlFor="subject" className="text-sm font-medium">Subject Code / Tag</label>
+                <Input id="subject" placeholder="e.g. CS301" />
+              </div>
+              <div className="grid gap-2">
+                <label htmlFor="desc" className="text-sm font-medium">Description</label>
+                <Input id="desc" placeholder="Brief description of contents..." />
+              </div>
+            </div>
+            <DialogFooter>
+              <Button type="submit">Upload explicitly</Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       </div>
       
       <div className="grid gap-3">

@@ -1,11 +1,12 @@
 ﻿import Link from "next/link";
-import { BookOpen, CheckSquare, GraduationCap, Users, LayoutDashboard } from "lucide-react";
+import { BookOpen, CheckSquare, GraduationCap, Users, LayoutDashboard, FileText } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { href: "/classes", label: "My Classes", icon: BookOpen },
   { href: "/tasks", label: "Tasks & Deadlines", icon: CheckSquare },
+  { href: "/notes", label: "Notes", icon: FileText },
   { href: "/grades", label: "Grades", icon: GraduationCap },
   { href: "/chat", label: "Chat", icon: Users },
 ];
