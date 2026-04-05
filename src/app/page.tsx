@@ -18,10 +18,10 @@ export default function LandingPage() {
           <Link href="#roles" className="hover:text-primary transition">Roles</Link>
         </nav>
         <div className="flex items-center gap-4">
-          <Link href="/login">
+          <Link href="/onboarding">
             <Button variant="ghost">Log in</Button>
           </Link>
-          <Link href="/signup">
+          <Link href="/onboarding">
             <Button>Get Started</Button>
           </Link>
         </div>
@@ -41,7 +41,7 @@ export default function LandingPage() {
               Centralized notes, task tracking, grade visibility, and class communication, all in one intelligent workspace for students and teachers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-              <Link href="/signup">
+              <Link href="/onboarding">
                 <Button size="lg" className="w-full sm:w-auto text-base h-12 px-8">Start for Free</Button>
               </Link>
               <Link href="#features">

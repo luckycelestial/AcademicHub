@@ -23,7 +23,7 @@ export default function Sidebar() {
         {navItems.map((item) => (
           <Link
             key={item.href}
-            href={`/(app)${item.href}`}
+            href={`${item.href}`}
             className={cn(
               "flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md transition-colors",
               "text-muted-foreground hover:bg-muted hover:text-foreground"
