@@ -40,6 +40,11 @@ export default function NotesPage() {
     e.preventDefault();
     if (!file) return;
 
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+      alert("Supabase environment variables are missing! Please check your Vercel deployment settings.");
+      return;
+    }
+
     setIsUploading(true);
 
     try {
@@ -48,11 +53,15 @@ export default function NotesPage() {
       const fileName = `${Math.random().toString(36).substring(2, 15)}_${Date.now()}.${fileExt}`;
       const filePath = `uploads/${fileName}`;
 
+      console.log("Attempting upload to bucket 'notes_files' at path:", filePath);
       const { error: uploadError } = await supabase.storage
         .from('notes_files')
         .upload(filePath, file);
 
-      if (uploadError) throw uploadError;
+      if (uploadError) {
+        console.error("Storage Upload Error:", uploadError);
+        throw new Error(`Storage upload failed: ${uploadError.message}`);
+      }
 
       // 2. Get public URL
       const { data: { publicUrl } } = supabase.storage
@@ -64,6 +73,7 @@ export default function NotesPage() {
       const sizeStr = `${sizeInMB} MB`;
 
       // 4. Insert record into messages table
+      console.log("Attempting insert into table 'notes'");
       const { error: dbError } = await supabase
         .from('notes')
         .insert([
@@ -78,7 +88,10 @@ export default function NotesPage() {
           }
         ]);
 
-      if (dbError) throw dbError;
+      if (dbError) {
+        console.error("Database Insert Error:", dbError);
+        throw new Error(`Database insert failed: ${dbError.message}`);
+      }
 
       // Success cleanup
       setFile(null);
@@ -87,10 +100,9 @@ export default function NotesPage() {
       setIsOpen(false);
       fetchNotes(); // Optimistically reload notes
 
-    } catch (err) {
-      console.error("Error uploading:", err);
-      // Ideally show a toast notification here
-      alert("Failed to upload the file. Please check the console for details.");
+    } catch (err: any) {
+      console.error("Comprehensive Upload Error:", err);
+      alert(`Failed: ${err.message || "Unknown error"}. Check if the 'notes' table and 'notes_files' bucket exist in your Supabase project.`);
     } finally {
       setIsUploading(false);
     }
