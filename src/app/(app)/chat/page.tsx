@@ -1,3 +1,4 @@
+import React from 'react';
 import { mockChats, mockClasses, currentUser } from '@/lib/mock-data';
 import { Send, Pin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
